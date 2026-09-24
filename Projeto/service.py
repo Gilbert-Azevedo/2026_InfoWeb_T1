@@ -17,9 +17,7 @@ class Service:
         ClienteDAO().inserir(obj)
     @staticmethod
     def cliente_listar():
-        r = ClienteDAO().listar()
-        r.sort(key = lambda obj : obj.get_nome().casefold())
-        return r
+        return ClienteDAO().listar()
     @staticmethod
     def cliente_listar_id(id):
         return ClienteDAO().listar_id(id)
@@ -49,9 +47,7 @@ class Service:
         ServicoDAO().inserir(obj)
     @staticmethod
     def servico_listar():
-        r = ServicoDAO().listar()
-        r.sort(key = lambda obj : obj.get_descricao().casefold())
-        return r
+        return ServicoDAO().listar()
     @staticmethod
     def servico_listar_id(id):
         return ServicoDAO().listar_id(id)
@@ -62,16 +58,7 @@ class Service:
     @staticmethod
     def servico_excluir(id):
         ServicoDAO().excluir(id)
-    @staticmethod
-    def horario_listar_disponiveis(id_profissional):
-        r = []
-        agora = datetime.now()
-        for h in Service.horario_listar():
-            if h.get_data() >= agora and h.get_confirmado() == False \
-            and h.get_id_cliente() == None and h.get_id_profissional() == id_profissional:
-                r.append(h)
-        r.sort (key = lambda h : h.get_data())
-        return r        
+
 
     @staticmethod
     def horario_inserir(data, confirmado, id_cliente, id_servico, id_profissional):
@@ -83,9 +70,7 @@ class Service:
         HorarioDAO().inserir(c)
     @staticmethod
     def horario_listar():
-        r = HorarioDAO().listar()
-        r.sort(key = lambda obj : obj.get_data())
-        return r
+        return HorarioDAO().listar()
     @staticmethod
     def horario_listar_id(id):
         return HorarioDAO().listar_id(id) 
@@ -120,15 +105,14 @@ class Service:
     def atendimento_excluir(id):
         AtendimentoDAO().excluir(id)
 
+
     @staticmethod
     def profissional_inserir(nome, email, especialidade, senha):
         obj = Profissional(0, nome, email, especialidade, senha)
         ProfissionalDAO().inserir(obj)
     @staticmethod
     def profissional_listar():
-        r = ProfissionalDAO().listar()
-        r.sort(key = lambda obj : obj.get_nome())
-        return r
+        return ProfissionalDAO().listar()
     @staticmethod
     def profissional_listar_id(id):
         return ProfissionalDAO().listar_id(id)
