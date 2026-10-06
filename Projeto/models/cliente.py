@@ -40,3 +40,6 @@ class Cliente:
     @staticmethod
     def from_json(dic):
         return Cliente(dic["id"], dic["nome"], dic["email"], dic["fone"], dic["senha"])
+
+
+
