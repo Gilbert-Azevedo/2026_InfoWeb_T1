@@ -12,7 +12,6 @@ from templates.abrirminhaagendaui import AbrirMinhaAgendaUI
 from templates.visualizarmeusservicosui import VisualizarMeusServicosUI
 from templates.visualizarminhaagendaui import VisualizarMinhaAgendaUI
 from templates.confirmarservicoui import ConfirmarServicoUI
-
 from service import Service
 import streamlit as st
 
