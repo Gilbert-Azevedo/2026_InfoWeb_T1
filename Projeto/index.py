@@ -37,7 +37,7 @@ class IndexUI:
         if op == "Confirmar Serviço": ConfirmarServicoUI.main()
 
     def menu_admin():
-        op = st.sidebar.selectbox("Menu", ["Meus Dados", "Clientes", "Serviços", "Horários", "Profissionais", "Atendimentos", "Alterar Senha"])
+        op = st.sidebar.selectbox("Menu", ["Meus Dados", "Clientes", "Serviços", "Horários", "Profissionais", "Atendimentos"])
         if op == "Meus Dados": PerfilAdminUI.main()
         if op == "Clientes": ManterClienteUI.main()
         if op == "Serviços": ManterServicoUI.main()
